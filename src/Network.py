@@ -16,3 +16,6 @@ class Network(object):
         for x, y in zip(sizes[:-1], sizes[1:]):  # pairs of consecutive layers
             w = np.random.randn(y, x)  # weight matrix with shape (y, x)
             self.weights.append(w)
+
+def sigmoid(z):
+    return 1.0/(1.0+np.exp(-z))  #1/(1 + e^-z) for every element in z
