@@ -19,3 +19,10 @@ class Network(object):
 
 def sigmoid(z):
     return 1.0/(1.0+np.exp(-z))  #1/(1 + e^-z) for every element in z
+
+def feedforward(self, a):
+    #return output of network for 'a' --> vector input
+    for b, w in zip(self.biases, self.weights):
+        a = sigmoid(np.dot(w,a) + b) #a' = sigmoid(w.a + b)
+    return a
+
