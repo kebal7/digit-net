@@ -1,5 +1,6 @@
 import numpy as np
 import random
+import os
 
 class Network(object):
     def __init__(self, sizes):
@@ -99,12 +100,16 @@ class Network(object):
         return (ouput_activations-y)
     
     def save(self, filename='model.npz'):
-        np.savez_compressed(filename, 
+        path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'model'))
+        os.makedirs(path, exist_ok=True)
+        full_path = os.path.join(path, filename)
+        np.savez_compressed(full_path, 
                             weights=np.array(self.weights, dtype=object), 
                             biases=np.array(self.biases, dtype=object))
 
     def load(self, filename='model.npz'):
-        data = np.load(filename, allow_pickle=True)
+        path = os.path.join('model', filename)
+        data = np.load(path, allow_pickle=True)
         self.weights = data['weights']
         self.biases = data['biases']
 
