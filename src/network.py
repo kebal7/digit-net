@@ -99,7 +99,9 @@ class Network(object):
         return (ouput_activations-y)
     
     def save(self, filename='model.npz'):
-        np.savez(filename, weights=self.weights, biases=self.biases)
+        np.savez_compressed(filename, 
+                            weights=np.array(self.weights, dtype=object), 
+                            biases=np.array(self.biases, dtype=object))
 
     def load(self, filename='model.npz'):
         data = np.load(filename, allow_pickle=True)

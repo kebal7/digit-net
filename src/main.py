@@ -7,3 +7,6 @@ test_data = list(test_data)
 
 net = network.Network([784, 30, 10])
 net.SGD(training_data, 30, 10, 3.0, test_data=test_data)
+
+net.save('digit_model.npz')
+print("Model Saved!")
