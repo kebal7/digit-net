@@ -62,11 +62,17 @@ You should see accuracy improving every epoch.
 
 ```
 digitnet/
+├── data/
+│   └── test/
+│       └── digit.png       # Place your test image here
+├── model/
+│   └── digit_model.npz     # Saved trained model
 ├── src/
-│   ├── main.py            # Entry point for training
-│   ├── network.py         # Neural network implementation
-│   └── mnist_loader.py    # MNIST data loader
-├── README.md              # Project documentation
+│   ├── main.py             # Entry point for training
+│   ├── network.py          # Neural network implementation
+│   ├── mnist_loader.py     # MNIST data loader
+│   └── test_image.py       # Script to test your image
+├── README.md               # Project documentation            # Project documentation
 ```
 
 ---
