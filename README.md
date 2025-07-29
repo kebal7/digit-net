@@ -36,8 +36,8 @@ Epoch 29: 9065 / 10000
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/<your-username>/digitnet.git
-cd digitnet
+git clone https://github.com/kebal7/digit-net.git
+cd digit-net
 ```
 
 ### 2. Set up Python environment
