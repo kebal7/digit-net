@@ -97,10 +97,19 @@ class Network(object):
 
     def cost_derivative(self, ouput_activations, y):
         return (ouput_activations-y)
+    
+    def save(self, filename='model.npz'):
+        np.savez(filename, weights=self.weights, biases=self.biases)
 
+    def load(self, filename='model.npz'):
+        data = np.load(filename, allow_pickle=True)
+        self.weights = data['weights']
+        self.biases = data['biases']
 
 def sigmoid(z):
     return 1.0/(1.0+np.exp(-z))  #1/(1 + e^-z) for every element in z
 
 def sigmoid_prime(z):
     return sigmoid(z) * (1-sigmoid(z)) #derivate of sigmoid function
+
+
