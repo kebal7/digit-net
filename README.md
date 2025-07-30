@@ -58,6 +58,29 @@ You should see accuracy improving every epoch.
 
 ---
 
+## 🧪 How to Test Your Model with Custom Images
+
+1. Prepare your test image:
+
+   - Place your image file inside the folder:  
+     `data/test/`
+   
+   - Name the file,:  
+     `digit.png`
+   
+   - **Image format requirements:**  
+     - Size: **28 × 28 pixels**  
+     - Color: **Black background with white digit**  
+     - Grayscale recommended (single channel)
+
+2. Run the test script:
+
+```bash
+python3 src/test_image.py
+```
+
+3. The script will load your image, preprocess it, run the model, and print the predicted digit.
+
 ## 📁 Project Structure
 
 ```
